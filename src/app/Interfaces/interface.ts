@@ -1,3 +1,4 @@
+
 export interface House {
   _id: string;
   name: string;
@@ -29,4 +30,12 @@ export interface Member {
   alias?: string;
   boggart?: string;
   wand?: string;
+}
+
+export interface Spell {
+  _id: string;
+  spell: string;
+  type: string;
+  effect: string;
+  __v?: number;
 }
