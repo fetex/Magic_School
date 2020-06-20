@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HowardsService } from '../services/howards.service';
+import { House } from '../Interfaces/interface';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { HowardsService } from '../services/howards.service';
 export class HomePage implements OnInit {
 
 
-  houses = ['Gryffindod', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+  houses = ['Gryffindor', 'Ravenclaw', 'Slytherin', 'Hufflepuff'];
 
 
   constructor( private howardService: HowardsService) {}
