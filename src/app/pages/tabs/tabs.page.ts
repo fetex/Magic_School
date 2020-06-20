@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HowardsService } from '../../services/howards.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TabsPage implements OnInit {
 
-  constructor() { }
+  constructor( private howardService: HowardsService ) { }
 
   ngOnInit() {
+
+    this.howardService.getAllHouses()
+    .subscribe( resp => {
+      console.log('houses', resp);
+    });
   }
 
 }
