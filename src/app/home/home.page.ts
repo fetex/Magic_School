@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+
+  houses = ['Gryffindod', 'Hufflepuff', 'Ravenclaw', 'Slytherin'];
+
+
   constructor() {}
 
 }
