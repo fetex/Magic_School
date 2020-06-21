@@ -12,10 +12,6 @@ export class TabsPage implements OnInit {
 
   ngOnInit() {
 
-    this.howardService.getAllHouses()
-    .subscribe( resp => {
-      console.log('houses', resp);
-    });
   }
 
 }
