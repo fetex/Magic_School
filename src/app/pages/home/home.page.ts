@@ -9,18 +9,9 @@ import { House } from '../../Interfaces/interface';
 })
 export class HomePage implements OnInit {
 
-
-  houses = ['Gryffindor', 'Ravenclaw', 'Slytherin', 'Hufflepuff'];
-
-
-  constructor( private howardService: HowardsService) {}
+  constructor() {}
 
 
   ngOnInit(){
-
-    this.howardService.getAllHouses()
-    .subscribe( resp => {
-      console.log('houses', resp);
-    });
 }
 }
