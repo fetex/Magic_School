@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { environment } from '../../environments/environment';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 
 const apikey = environment.apikey;
 const apiURL = environment.apiUrl;
+const house =  apikey + '&house=';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class HowardsService {
   constructor( private http: HttpClient) { }
 
   /* Build  basic structure  URL for endpoints */
-  private  runQuery( query: string): Observable<any>
+  private  runQuery( query: string, optional?): Observable<any>
   {
     query = apiURL + query + '?key=' + apikey;
 
@@ -36,8 +37,9 @@ export class HowardsService {
 
   /* Given all members of a Howards' House*/
   getMembers(nameHouse: string): Observable<any>{
-    return this.runQuery(`characters.&house=${nameHouse}` );
+    return this.http.get(`${apiURL}characters/?key=${house}${nameHouse}`);
   }
+
 
   /* Given details of a member*/
   getMembersId(id: string): Observable<any>{
