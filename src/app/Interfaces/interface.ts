@@ -8,7 +8,7 @@ export interface House {
   founder: string;
   __v: number;
   school?: string;
-  members: Member[];
+  members: string[];
   values: string[];
   colors: string[];
 }
