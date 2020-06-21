@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.prod';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { House } from '../Interfaces/interface';
+import { environment } from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 
 const apikey = environment.apikey;
 const apiURL = environment.apiUrl;
-const headers = new HttpHeaders({
-  'X-Api-Key': apikey
-});
 
 @Injectable({
   providedIn: 'root'
@@ -17,14 +15,37 @@ export class HowardsService {
 
   constructor( private http: HttpClient) { }
 
-  // private  runQuery<T>( query: string){
-  //   query = apiURL + query;
+  /* Build  basic structure  URL for endpoints */
+  private  runQuery( query: string): Observable<any>
+  {
+    query = apiURL + query + '?key=' + apikey;
 
-  //   return this.http.get<T>(query, {headers});
-  // }
+    return this.http.get(query);
+  }
 
-  getAllHouses(){
-    return this.http.get<House>(`https://www.potterapi.com/v1/houses/?key=%242a%2410%24UTNkkNxZ95c7eTDlkhCYu.0Fuz4ND7OJxRxAx9r5M%2F9ymoOxqc7k.`);
+  /* Given all House of Howards */
+  getAllHouses(): Observable<any>{
+    return this.runQuery(`houses/`);
+  }
 
+  /* Given especific House of Howards */
+  getHousebyId( id: string): Observable<any>{
+  return this.runQuery(`houses/${id}`);
+  }
+
+
+  /* Given all members of a Howards' House*/
+  getMembers(nameHouse: string): Observable<any>{
+    return this.runQuery(`characters.&house=${nameHouse}` );
+  }
+
+  /* Given details of a member*/
+  getMembersId(id: string): Observable<any>{
+    return this.runQuery(`characters/${id}`);
+  }
+
+  /* Given all Spell from the magic World*/
+  getSpells(): Observable<any>{
+    return this.runQuery(`spells`);
   }
 }
