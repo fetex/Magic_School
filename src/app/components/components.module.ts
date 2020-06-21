@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HousesComponent } from './houses/houses.component';
-import { HouseMembersComponent } from './house-members/house-members.component';
 import { IonicModule } from '@ionic/angular';
+import { HouseComponent } from './house/house.component';
 
 
 @NgModule({
   declarations: [
     HousesComponent,
-    HouseMembersComponent
+    HouseComponent
   ],
   exports: [
     HousesComponent,
-    HouseMembersComponent
   ],
   imports: [
     CommonModule,

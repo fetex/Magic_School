@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { House } from '../../Interfaces/interface';
+import { HowardsService } from '../../services/howards.service';
 
 @Component({
   selector: 'app-house1',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class House1Page implements OnInit {
 
-  constructor() { }
+  houses: House[] = [];
+  constructor( private hogwarService: HowardsService) { }
 
   ngOnInit() {
+    this.hogwarService.getAllHouses()
+    .subscribe( resp => {
+      this.houses.push( ...resp);
+    });
   }
 
 }
