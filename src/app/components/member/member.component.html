@@ -1,23 +1,88 @@
 <ion-header translucent>
     <ion-toolbar>
-        <ion-subtitle> Hogwards Student </ion-subtitle>
+        <ion-title> Member </ion-title>
         <ion-buttons slot="end">
             <ion-button href="/tabs/house2">
-                <ion-icon slot="start" name="add"></ion-icon>
+                <ion-icon name="close-circle-sharp"></ion-icon>
             </ion-button>
         </ion-buttons>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <i-gri>
-        <ion-row>
-            <ion-col size="12">
-                <ion-img [src]="image"></ion-img>
-            </ion-col>
-            <ion-col size="12">
+    <ion-grid>
+        <ion-col size="12">
+            <ion-img src="assets/images/shield.png"></ion-img>
+        </ion-col>
 
-            </ion-col>
-        </ion-row>
-    </i-gri>
+        <ion-col size="12">
+            <ion-card>
+                <ion-card-header>
+
+                    <ion-thumbnail *ngIf="infoMember.bloodStatus=='pure-blood'" class="container">
+                        <img src="assets/icon/Pure Blood.PNG" />
+                    </ion-thumbnail>
+
+                    <ion-thumbnail *ngIf="infoMember.bloodStatus=='unknown'" class="container">
+                        <img src="assets/icon/Unknown.PNG" />
+                    </ion-thumbnail>
+
+                    <ion-thumbnail *ngIf="infoMember.bloodStatus=='muggle-born'" class="container">
+                        <img src="assets/icon/Muggle.PNG" />
+                    </ion-thumbnail>
+
+                    <ion-thumbnail *ngIf="infoMember.bloodStatus=='half-blood'" class="container">
+                        <img src="assets/icon/Half Blood.PNG" />
+                    </ion-thumbnail>
+
+                    <ion-label class="center"> {{infoMember.bloodStatus}} </ion-label>
+                </ion-card-header>
+
+                <ion-card-content>
+                    <ion-list>
+
+                        <ion-item>
+                            <ion-label> Name: {{infoMember.name}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> Role: {{infoMember.role}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> Species: {{infoMember.species}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> Order Of ThePhoenix: {{infoMember.orderOfThePhoenix}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> DumbledoresArmy: {{infoMember.dumbledoresArmy}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> Patronus: {{infoMember.patronus}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> Alias: {{infoMember.alias}} </ion-label>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label> Boggart: {{infoMember.boggart}} </ion-label>
+                        </ion-item>
+
+                        <ion-item>
+                            <ion-label> Wand: {{infoMember.wand}} </ion-label>
+                        </ion-item>
+
+                    </ion-list>
+
+
+                </ion-card-content>
+
+            </ion-card>
+        </ion-col>
+
+    </ion-grid>
 </ion-content>

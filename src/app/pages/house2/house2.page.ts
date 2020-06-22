@@ -33,6 +33,7 @@ export class House2Page implements OnInit {
     this.hogwardService.getMembersbyHouse( house)
     .subscribe( resp => {
       this.members.push( ...resp);
+      console.log('member', resp);
     });
   }
 
