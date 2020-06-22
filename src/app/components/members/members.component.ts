@@ -10,7 +10,7 @@ import { Member } from '../../Interfaces/interface';
 export class MembersComponent implements OnInit {
 
   @Input() members: any[];
-
+  @Input()  filter: string;
   constructor( private hogwardService: HowardsService) { }
 
   ngOnInit() {
@@ -20,5 +20,7 @@ export class MembersComponent implements OnInit {
       console.log('members', resp);
     });
   }
+
+
 
 }

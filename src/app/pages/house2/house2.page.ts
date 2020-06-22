@@ -23,7 +23,6 @@ export class House2Page implements OnInit {
     this.loadMembers( this.names[0]);
   }
 
-
   houseChanged(event){
     this.members = [];
     this.loadMembers( event.detail.value);
