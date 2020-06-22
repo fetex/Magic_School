@@ -6,6 +6,7 @@ import { HouseComponent } from './house/house.component';
 import { MembersComponent } from './members/members.component';
 import { HouseDetailsComponent } from './house-details/house-details.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MemberComponent } from './member/member.component';
 
 
 @NgModule({
@@ -13,11 +14,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HousesComponent,
     HouseComponent,
     HouseDetailsComponent,
-    MembersComponent
+    MembersComponent,
+    MemberComponent
   ],
   exports: [
     HousesComponent,
-    MembersComponent
+    MembersComponent,
+    MemberComponent
   ],
   imports: [
     CommonModule,
