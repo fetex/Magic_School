@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { House } from '../../Interfaces/interface';
 import { HowardsService } from '../../services/howards.service';
+import { IonSegment } from '@ionic/angular';
 import { element } from 'protractor';
 
 @Component({
@@ -9,6 +10,9 @@ import { element } from 'protractor';
   styleUrls: ['./house1.page.scss'],
 })
 export class House1Page implements OnInit {
+
+  names = ['Gryffindor', 'Ravenclaw', 'Slytherin', 'Hufflepuff'];
+  @ViewChild(IonSegment, {static: true})  segment: IonSegment;
 
   houses: House[] = [];
 

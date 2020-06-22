@@ -22,7 +22,6 @@ export class House2Page implements OnInit {
     this.hogwardService.getMembersbyHouse( this.names[0])
     .subscribe( resp => {
       this.members.push( ...resp);
-      console.log('miembros casa 1', this.members);
     });
   }
 
