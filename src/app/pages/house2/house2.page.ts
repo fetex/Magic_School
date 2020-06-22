@@ -18,11 +18,23 @@ export class House2Page implements OnInit {
   constructor( private hogwardService: HowardsService) { }
 
   ngOnInit() {
-    this.segment.value = this.names[0];  /* Value for defaul in the segment*/
-    this.hogwardService.getMembersbyHouse( this.names[0])
+    this.segment.value = this.names[0]; /* Value for defaul in the segment*/
+    this.loadMembers( this.names[0]);
+  }
+
+
+  houseChanged(event){
+    this.members = [];
+    this.loadMembers( event.detail.value);
+  }
+
+  /* Function load Members' House */
+  loadMembers( house: string){
+    this.hogwardService.getMembersbyHouse( house)
     .subscribe( resp => {
       this.members.push( ...resp);
     });
+
   }
 
 }
