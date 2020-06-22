@@ -16,6 +16,19 @@
 
 <ion-content>
     <ion-grid fixed>
+
+        <div class="sort">
+
+            <ion-item>
+                <ion-label> Sort By</ion-label>
+                <ion-select [interfaceOptions]="customOptions" interface="popover">
+                    <ion-select-option value="peperoni">Name</ion-select-option>
+                    <ion-select-option value="hawaii">Last Name</ion-select-option>
+                </ion-select>
+            </ion-item>
+
+        </div>
+
         <ion-row>
             <ion-col size="6" *ngFor="let member of members">
                 <ion-card>
