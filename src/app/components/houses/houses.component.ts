@@ -9,8 +9,9 @@ import { House } from '../../Interfaces/interface';
 })
 export class HousesComponent implements OnInit {
 
-  houses: House[] = [];
-  @Input() DetailsHouse: any[];
+  DetailsHouse: any[];
+
+  @Input() houses: House[] = [];
 
 
 
@@ -23,22 +24,25 @@ export class HousesComponent implements OnInit {
       this.DetailsHouse = [
         {
           name: this.houses[0].name,
-          img: '/assets/images/Logo_Gryffindor.PNG'
+          img: '/assets/images/Logo_Gryffindor.PNG',
+          total: this.houses[0].members.length
         },
         {
           name: this.houses[1].name,
-          img: '/assets/images/Logo_Ravenclaw.PNG'
+          img: '/assets/images/Logo_Ravenclaw.PNG',
+          total: this.houses[1].members.length
         },
         {
           name: this.houses[2].name,
-          img: '/assets/images/Logo_Slytherin.PNG'
+          img: '/assets/images/Logo_Slytherin.PNG',
+          total: this.houses[2].members.length
         },
         {
           name: this.houses[3].name,
-          img: '/assets/images/Logo_Hufflepuf.PNG'
+          img: '/assets/images/Logo_Hufflepuf.PNG',
+          total: this.houses[3].members.length
         }
       ];
-      console.log('detail', this.DetailsHouse);
     });
   }
 

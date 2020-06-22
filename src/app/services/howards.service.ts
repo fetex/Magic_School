@@ -36,10 +36,14 @@ export class HowardsService {
 
 
   /* Given all members of a Howards' House*/
-  getMembers(nameHouse: string): Observable<any>{
+  getMembersbyHouse(nameHouse: string): Observable<any>{
     return this.http.get(`${apiURL}characters/?key=${house}${nameHouse}`);
   }
 
+  /* Given all characters*/
+  getMembers(): Observable<any>{
+    return this.runQuery(`characters/`);
+  }
 
   /* Given details of a member*/
   getMembersId(id: string): Observable<any>{

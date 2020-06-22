@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { House } from '../../Interfaces/interface';
 import { HowardsService } from '../../services/howards.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-house1',
@@ -10,6 +11,7 @@ import { HowardsService } from '../../services/howards.service';
 export class House1Page implements OnInit {
 
   houses: House[] = [];
+
   constructor( private hogwarService: HowardsService) { }
 
   ngOnInit() {
@@ -18,5 +20,4 @@ export class House1Page implements OnInit {
       this.houses.push( ...resp);
     });
   }
-
 }
