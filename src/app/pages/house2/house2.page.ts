@@ -14,6 +14,7 @@ export class House2Page implements OnInit {
   @ViewChild(IonSegment, {static: true})  segment: IonSegment;
 
   members: Member[] = [];
+  filter: string;
 
   constructor( private hogwardService: HowardsService) { }
 
@@ -34,7 +35,22 @@ export class House2Page implements OnInit {
     .subscribe( resp => {
       this.members.push( ...resp);
     });
-
   }
 
+  Sort(){
+    switch (this.filter) {
+      case 'name':
+        this.members = this.members.sort((a, b) =>
+          a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+        );
+        break;
+      case 'lastName':
+        this.members = this.members.sort((a, b) =>
+          a.name.split(' ')[1] > b.name.split(' ')[1] ? 1
+            : b.name.split(' ')[1] > a.name.split(' ')[1] ? -1 : 0
+        );
+        break;
+    }
+
+  }
 }
