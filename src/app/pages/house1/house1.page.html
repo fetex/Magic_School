@@ -2,16 +2,7 @@
     <ion-toolbar>
         <ion-title> Houses </ion-title>
     </ion-toolbar>
-    <ion-segment scrollable mode="md" (ionChange)="segmentChanged($event)">
-
-        <ion-segment-button mode="md" *ngFor="let name of names" [value]="name">
-
-            <ion-label> {{name}} </ion-label>
-
-        </ion-segment-button>
-    </ion-segment>
 </ion-header>
-
 <ion-content>
 
     <app-houses [houses]="houses"></app-houses>

@@ -11,8 +11,6 @@ import { element } from 'protractor';
 })
 export class House1Page implements OnInit {
 
-  names = ['Gryffindor', 'Ravenclaw', 'Slytherin', 'Hufflepuff'];
-  @ViewChild(IonSegment, {static: true})  segment: IonSegment;
 
   houses: House[] = [];
 
