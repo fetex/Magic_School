@@ -21,14 +21,6 @@ const routes: Routes = [
         loadChildren: () => import('../house2/house2.module').then(m => m.House2PageModule)
       },
       {
-        path: 'house3',
-        loadChildren: () => import('../house3/house3.module').then(m => m.House3PageModule)
-      },
-      {
-        path: 'house4',
-        loadChildren: () => import('../house4/house4.module').then(m => m.House4PageModule)
-      },
-      {
         path: '',
         redirectTo: '/tabs/house1',
         pathMatch: 'full'
