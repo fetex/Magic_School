@@ -4,6 +4,11 @@
             <app-house [detail]="detail"></app-house>
         </ion-col>
     </ion-row>
+
+    <ion-chip>
+        <ion-label class="label-chip"> Details Houses </ion-label>
+    </ion-chip>
+
     <ion-row>
         <ion-col size-sm="12" size="12" size-lg="3" size-md="4" size-xs="12" *ngFor="let house of houses">
             <app-house-details [house]="house"> </app-house-details>

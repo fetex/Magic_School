@@ -3,3 +3,16 @@
     margin-top: 15px;
     border-color: rgba(0, 166, 255, 0.35);
 }
+
+ion-segment {
+    --background: rgba(26, 156, 207, 0.692);
+}
+
+ion-segment-button {
+    background-color: var( --ion--color--dark) !important;
+    color: white !important;
+}
+
+.segment-button-checked {
+    color: black !important;
+}

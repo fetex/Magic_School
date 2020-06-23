@@ -40,3 +40,16 @@ ion-title {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 30px;
 }
+
+ion-card {
+    border-color: darkcyan;
+}
+
+ion-button {
+    --background: rgba(0, 166, 255, 0.61);
+    --border-radius: 20px;
+}
+
+.tab-selected {
+    color: darkcyan;
+}
