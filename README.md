@@ -13,7 +13,9 @@ the user can see the different data provided by the Harry Potter API
 ## Principal Features: 
 
 • Display all the Houses, count their members.
+
 • User can sort the members of a house by name or surname
+
 • The blood status type is identified by an icon
 
 ## Extras Features: 
