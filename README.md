@@ -21,6 +21,7 @@ the user can see the different data provided by the Harry Potter API
 ## Extras Features: 
 
 • Profile of the member with information
+
 • Show details of the houses
 
 
